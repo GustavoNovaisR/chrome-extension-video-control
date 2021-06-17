@@ -1,0 +1,43 @@
+{
+  "name": "chrome-extension-video-control",
+  "version": "1.0.0",
+  "description": "Extensão do chrome para controlar videos.",
+  "private": true,
+  "scripts": {
+    "build": "webpack -w"
+  },
+  "author": "Gustavo Novais Rodrigues",
+  "repository": {
+    "url": "https://github.com/GustavoNovaisR/chrome-extension-video-control"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@types/chrome": "^0.0.145",
+    "@types/copy-webpack-plugin": "^8.0.0",
+    "@types/css-minimizer-webpack-plugin": "^3.0.1",
+    "@types/fork-ts-checker-webpack-plugin": "^0.4.5",
+    "@types/mini-css-extract-plugin": "^1.4.3",
+    "@types/webpack": "^5.28.0",
+    "babel-loader": "^8.2.2",
+    "chrome-types": "^0.1.13",
+    "clean-webpack-plugin": "*",
+    "copy-webpack-plugin": "^9.0.0",
+    "css-loader": "^5.2.6",
+    "css-minimizer-webpack-plugin": "^3.0.1",
+    "eslint": "^7.28.0",
+    "fork-ts-checker-webpack-plugin": "^6.2.10",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.6.0",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^9.2.3",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-fix-style-only-entries": "^0.6.1"
+  }
+}

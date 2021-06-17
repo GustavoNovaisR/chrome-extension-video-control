@@ -1,0 +1,105 @@
+:root {
+  --color: #ef6eae;
+  --hover: hue-rotate(45deg);
+}
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper-btn {
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+}
+.title {
+  font-size: 0.5rem;
+}
+.pulse {
+  --color: #ef6eae;
+  --hover: #ef8f6e;
+}
+.pulse:hover {
+  -webkit-animation: pulse 1s;
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+.btn {
+  color: var(--color);
+  transition: 0.25s;
+}
+.btn:hover,
+.btn:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+.btn {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 2px;
+  padding: 5px 10px;
+}
+.btn:hover {
+  cursor: pointer;
+}
+.iframe-btn {
+  border: none;
+  font-size: 1em;
+  background: none;
+  color: #fff;
+}
+.iframe-btn:hover {
+  cursor: pointer;
+}
+.wrapper-iframes {
+  display: flex;
+  flex-direction: column;  
+}
+.inactive{
+  pointer-events: none;
+  visibility: hidden;
+  height: 0px;
+  overflow: hidden;
+}
+.active {
+  pointer-events: auto;
+  visibility: visible;
+  height: max-content;
+  overflow:auto;
+}
+.wrapper-iframes a {
+  font-size: 0.8rem;
+  color: var(--color);
+  margin-bottom: 4px;
+}
+
+h1 {
+  font-weight: 400;
+}
+body {
+  color: #fff;
+  background: #17181c;
+  font: 300 1em "Fira Sans", sans-serif;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}

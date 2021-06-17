@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "lib": ["ES5", "ES6", "DOM", "ES2019","DOM.Iterable"],
+    "allowJs": true,
+    // "module": "es2015",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "downlevelIteration": true
+  },
+  "include": ["src"]
+}

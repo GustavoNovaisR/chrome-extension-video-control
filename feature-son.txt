@@ -1,0 +1,56 @@
+                backgroundjs
+
+if (iframeRequestIsCorrect(request)) {
+
+            }
+
+function hadleIframeRequest(request: SenderMessage) {     
+    const { payload, tabId, type } = request as SenderMessageIframesRequest
+     if (type === 'iframesRequest') {
+         if (payload.length > 0) {
+             console.log('hadleCommand :>> ');
+            commandsController
+                 .executeCommand(command, tabId)
+         }
+
+     }
+ }
+
+function iframeRequestIsCorrect(request: SenderMessage): boolean {
+    if (!request) return false;
+    if (request.type !== 'iframesRequest') return false;
+    if (!request.payload) return false
+    return true
+}
+
+
+                popup .html
+<span class="title">iFrames
+    <button id="retriveIframes" class="iframe-btn">▼ ▲</button>
+</span>
+<div class="wrapper-iframes inactive">
+    <!-- <a href="#"
+        title="http://sitemuit.muito.grande.com/0921830918209380912/32143243432/4234234234/234324324234/23424242343243223/4234242424324242/titulo"
+        target="_blank">
+        http://sitemuit.muito.gran........4324242/titulo
+    </a> -->
+</div>
+
+
+
+
+            Retrive from contentScript
+if (request.type === 'iframesRequest') {
+    // update button UI
+    const wrapper = document.getElementsByClassName('wrapper-iframes')
+    wrapper[0].classList.remove('inactive')
+    wrapper[0].classList.add('active')
+
+    for (const iframeUrl of request.payload) {
+        const link = document.createElement('a')
+        link.setAttribute('title', iframeUrl)
+        link.setAttribute('target', '_blank')
+        link.href = iframeUrl
+        link.append('LINK TRATADO !!! ')
+    }
+}
