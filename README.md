@@ -11,7 +11,7 @@
 ## Tabela de conteúdos
 
 - [Sobre](#Sobre)
-- <a href="#instalacaor">Instalação do projeto</a>
+- <a href="#instalacao">Instalação do projeto</a>
 - <a href="#como-usar">Como usar a extensão</a>
 - <a href="#funcionalidades">Funcionalidades</a>
 - <a href="#hotkeys">Hotkeys</a>
