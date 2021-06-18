@@ -4,7 +4,8 @@
   "description": "Extensão do chrome para controlar videos.",
   "private": true,
   "scripts": {
-    "build": "webpack -w"
+    "build": "webpack",
+    "build:w": "webpack -w"
   },
   "author": "Gustavo Novais Rodrigues",
   "repository": {
@@ -28,6 +29,7 @@
     "css-loader": "^5.2.6",
     "css-minimizer-webpack-plugin": "^3.0.1",
     "eslint": "^7.28.0",
+    "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^6.2.10",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",

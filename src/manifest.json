@@ -5,9 +5,16 @@
   "description": "Controle para os videos",
   "author": "Gustavo Novais Rodrigues",
   "permissions": ["activeTab", "scripting", "storage", "tabs"],
-  "host_permissions":["file://*/*","*://*/*"],
+  "host_permissions": ["file://*/*", "*://*/*"],
   "action": {
-    "default_popup": "popup/popup.html"
+    "default_popup": "popup/popup.html",
+    "default_title": "Video control",
+    "default_icon": {
+      "16": "popup/images/16.png",
+      "32": "popup/images/32.png",
+      "48": "popup/images/48.png",
+      "128": "popup/images/128.png"
+    }
   },
   "background": {
     "service_worker": "background.js"

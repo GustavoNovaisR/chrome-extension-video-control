@@ -1,4 +1,8 @@
 import './popup.css'// para ativar o webpack e  minificar o css
+import './images/128.png';
+import './images/48.png';
+import './images/32.png';
+import './images/16.png';
 import { constants } from '../dir_shared/constants'
 import { SenderMessage } from '../dir_shared/interfaces/SenderMessage.interface';
 

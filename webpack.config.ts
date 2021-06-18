@@ -43,7 +43,18 @@ const config: webpack.Configuration = {
                 test: /\.(css|scss)$/,
                 // use: ['style-loader', 'css-loader'],
                 use: [MiniCssExtractPlugin.loader, 'css-loader'],
-            }
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'popup/images/[name].[ext]',
+                        },
+                    },
+                ],
+            },
         ],
     },
     resolve: {
@@ -58,8 +69,6 @@ const config: webpack.Configuration = {
         new CopyWebpackPlugin({
             patterns: [
                 { from: path.resolve(__dirname, "src/manifest.json") },
-                // { from: path.resolve(__dirname, "src/popup/style.css") }
-                // { from: 'src/manifest.json', to: 'manifest.json' },
                 // { from: 'src/*.png', to: '[name].[ext]' }
             ]
         }),

@@ -7,7 +7,7 @@ import { SenderMessage } from "../dir_shared/interfaces/SenderMessage.interface"
             let atualSpeed
             let playbackRate
 
-            atualSpeed = parseInt(speed)
+            atualSpeed = parseFloat(speed)
             const allTagsVideo = (<HTMLVideoElement[]><any>document.getElementsByTagName('video'))
 
             for (let videoTag of allTagsVideo) {
