@@ -105,7 +105,7 @@ Clique "Carregar sem compactação" e selecione a pasta "dist" do projeto
     </tr>
     <tr>
           <td>↓</td>
-          <td>:diminuir velocidade -5%</td>
+          <td>:diminuir volume -5%</td>
     </tr>
     <tr>
           <td>→</td>
