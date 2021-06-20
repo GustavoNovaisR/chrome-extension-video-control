@@ -89,6 +89,9 @@
   color: var(--color);
   margin-bottom: 4px;
 }
+.currentBtn{
+  min-width: 74px;
+}
 
 h1 {
   font-weight: 400;
