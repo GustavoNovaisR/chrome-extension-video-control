@@ -20,8 +20,8 @@ chrome.storage.sync.get(constants.speedStorageName, ({ speed }) => {
 
 // The "hotkeys" were inspired by the 'youtube hotkeys.' that's why I decided to disable them if the site was youtube. 
 // As "hotkeys" foram inspiradas nas 'hotkeys do youtube". por isso eu resolvi desativa-las se o site fosse do youtube. Para que não houvesem eventos duplicados
-const URL = window.location.href
-const isYoutube = URL.match(/^https:\/\/(www.)?(youtube).(com)\/(watch)+(\?v=)/)
+const URL = ()=> window.location.href
+const isYoutube = URL().match(/^https:\/\/(www.)?(youtube).(com)/)//\/(watch)+(\?v=)
 
 if (!isYoutube) {
 
