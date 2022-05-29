@@ -20,10 +20,43 @@ chrome.storage.sync.get(constants.speedStorageName, ({ speed }) => {
 
 // The "hotkeys" were inspired by the 'youtube hotkeys.' that's why I decided to disable them if the site was youtube. 
 // As "hotkeys" foram inspiradas nas 'hotkeys do youtube". por isso eu resolvi desativa-las se o site fosse do youtube. Para que não houvesem eventos duplicados
-const URL = ()=> window.location.href
+const URL = () => window.location.href
 const isYoutube = URL().match(/^https:\/\/(www.)?(youtube).(com)/)//\/(watch)+(\?v=)
+const isTwitch = URL().match(/^https:\/\/(www.)?(twitch).(tv)/)
 
-if (!isYoutube) {
+
+if (isTwitch) {
+    // Keypress Events
+    document.onkeydown = (keyDownEvent) => {
+        // checkers dont need this part but I left it here for future use
+        const isTypingInInput: boolean = (document.activeElement?.tagName === 'INPUT')
+        const isTypingInTextarea: boolean = (document.activeElement?.tagName === 'TEXTAREA')
+        const isDocumentFocus: boolean = document.hasFocus()
+
+        if (isTypingInInput) return
+        if (isTypingInTextarea) return
+        if (!isDocumentFocus) return
+
+        //checker for twitch.tv
+        const classNameInputChat = 'div.chat-wysiwyg-input__editor'
+        const classNameOnFocusInputChat = 'focus-visible'
+        const isChatInputFocus: boolean = !!(document.querySelector(classNameInputChat)?.classList.contains(classNameOnFocusInputChat))
+        
+        if (isChatInputFocus) return
+
+        const keyName = keyDownEvent.key.toLowerCase() as Hotkeys | string
+
+        if (!(hotkeys as Array<Hotkeys | string>).includes(keyName)) return
+
+        const keypress: SenderMessage = {
+            type: 'keypress',
+            payload: keyName,
+            tabId: undefined // tabID is sent by variable "Sender" 
+        }
+        //sender
+        chrome.runtime.sendMessage(keypress)
+    }
+} else if (!isYoutube) {
 
     // Keypress Events
     document.onkeydown = (keyDownEvent) => {
